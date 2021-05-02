@@ -4,12 +4,12 @@
 //init client
 TMail client = new TMailClient("https://urltmail.url", "APIKEY HERE");
  
- //order
+ //gen new email
 var email = await client.GenerateEmail();
  
 //check
 emailwait:
-var emails = await client.CheckEmail(email); // Will return Waiting. if still waiting it auto refund if expired
+var emails = await client.CheckEmail(email); // Will return Waiting until emails arrive.
 while (emails == "Waiting.")
 {
 	await Task.Delay(1000);
