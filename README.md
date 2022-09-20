@@ -8,14 +8,11 @@ TMail client = new TMailClient("https://urltmail.url", "APIKEY HERE");
 var email = await client.GenerateEmail();
  
 //check
-emailwait:
 var emails = await client.CheckEmail(email); // Will return Waiting until emails arrive.
-while (emails == "Waiting.")
+while (await client.CheckEmail(email) == "Waiting.")
 {
 	await Task.Delay(1000);
-	goto emailwait; //wouldn't recommend using this but it works for newbs
 }
 
 Console.WriteLine(emails);
-
 ```
