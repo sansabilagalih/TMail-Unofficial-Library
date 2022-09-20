@@ -16,3 +16,11 @@ while (await client.CheckEmail(email) == "Waiting.")
 
 Console.WriteLine(emails);
 ```
+
+## FAQ
+- This Library is for https://codecanyon.net/item/tmail-multi-domain-temporary-email-system/20177819
+
+## Nuget
+```csharp
+Install-Package TMail.API 
+```
